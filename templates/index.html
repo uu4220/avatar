@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Avatar Generator</title>
+</head>
+<body>
+    <h1>Generate your pixel avatar</h1>
+    <form method="POST">
+        <label>Color:
+            <select name="couleur">
+                <option>rose</option>
+                <option>bleu clair</option>
+                <option>vert menthe</option>
+                <option>lavande</option>
+                <option>saumon</option>
+            </select>
+        </label>
+        <br>
+        <label>Emotion:
+            <select name="emotion">
+                <option>joyeux</option>
+                <option>triste</option>
+                <option>colère</option>
+                <option>ennuyé</option>
+                <option>calme</option>
+            </select>
+        </label>
+        <br>
+        <label>Element:
+            <select name="element">
+                <option>feu</option>
+                <option>eau</option>
+                <option>vent</option>
+                <option>terre</option>
+                <option>lumière</option>
+                <option>obscurité</option>
+            </select>
+        </label>
+        <br>
+        <button type="submit">Generate</button>
+    </form>
+    <br>
+    <img src="/static/mon_avatar.png" alt="avatar">
+</body>
+</html>
