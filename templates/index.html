@@ -5,37 +5,70 @@
     <title>Générateur d'Avatar Émotionnel</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff1f5, #fde2e4);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
         }
-        .container {
-            text-align: center;
+        
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 20px 0 10px;
+            font-weight: 600;
+            color: #444;
         }
         select, button {
-            margin: 10px;
-            padding: 10px;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
             font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        button {
+            background-color: #5c6bc0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #3f51b5;
         }
         img {
-            margin-top: 20px;
-            max-width: 256px;
+            margin-top: 30px;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h2>Générateur d'Avatar Émotionnel</h2>
+    <img src="/static/UntitledArtwork6.png" alt="identité virtuelle" style="width: 80%; max-width: 320px; margin-bottom: 20px;">
+    <img src="/static/UntitledArtwork6.png" alt="identité virtuelle" style="max-width: 300px; margin-bottom: 20px;">
     <form method="POST">
-        <label>1. Quelle couleur reflète le mieux ton émotion actuelle ?</label><br>
+        <label>1. Quelle couleur reflète le mieux ton émotion actuelle ?</label>
         <select name="couleur">
             <option value="rouge">Rouge</option>
             <option value="jaune">Jaune</option>
@@ -43,17 +76,17 @@
             <option value="vert">Vert</option>
             <option value="violet">Violet</option>
             <option value="noir">Noir</option>
-        </select><br>
+        </select>
 
-        <label>2. Quel est ton état actuel ?</label><br>
+        <label>2. Quel est ton état actuel ?</label>
         <select name="etat">
             <option value="fatigué">Fatigué(e)</option>
             <option value="endormi">Endormi(e)</option>
             <option value="détendu">Détendu(e)</option>
             <option value="énergique">Énergique</option>
-        </select><br>
+        </select>
 
-        <label>3. Quel élément te représente le plus ?</label><br>
+        <label>3. Quel élément te représente le plus ?</label>
         <select name="element">
             <option value="feu">Feu</option>
             <option value="eau">Eau</option>
@@ -61,13 +94,13 @@
             <option value="terre">Terre</option>
             <option value="lumière">Lumière</option>
             <option value="obscurité">Obscurité</option>
-        </select><br>
+        </select>
 
-        <label>4. Tu préfères les interactions sociales virtuelles ou réelles ?</label><br>
+        <label>4. Tu préfères les interactions sociales virtuelles ou réelles ?</label>
         <select name="interaction">
             <option value="virtuel">Virtuel</option>
             <option value="réalité">Réalité</option>
-        </select><br>
+        </select>
 
         <button type="submit">Générer l'avatar</button>
     </form>
