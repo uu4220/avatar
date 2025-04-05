@@ -2,45 +2,79 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Avatar Generator</title>
+    <title>Générateur d'Avatar Émotionnel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 256px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Generate your pixel avatar</h1>
+<div class="container">
+    <h2>Générateur d'Avatar Émotionnel</h2>
     <form method="POST">
-        <label>Color:
-            <select name="couleur">
-                <option>rose</option>
-                <option>bleu clair</option>
-                <option>vert menthe</option>
-                <option>lavande</option>
-                <option>saumon</option>
-            </select>
-        </label>
-        <br>
-        <label>Emotion:
-            <select name="emotion">
-                <option>joyeux</option>
-                <option>triste</option>
-                <option>colère</option>
-                <option>ennuyé</option>
-                <option>calme</option>
-            </select>
-        </label>
-        <br>
-        <label>Element:
-            <select name="element">
-                <option>feu</option>
-                <option>eau</option>
-                <option>vent</option>
-                <option>terre</option>
-                <option>lumière</option>
-                <option>obscurité</option>
-            </select>
-        </label>
-        <br>
-        <button type="submit">Generate</button>
+        <label>1. Quelle couleur reflète le mieux ton émotion actuelle ?</label><br>
+        <select name="couleur">
+            <option value="rouge">Rouge</option>
+            <option value="jaune">Jaune</option>
+            <option value="bleu">Bleu</option>
+            <option value="vert">Vert</option>
+            <option value="violet">Violet</option>
+            <option value="noir">Noir</option>
+        </select><br>
+
+        <label>2. Quel est ton état actuel ?</label><br>
+        <select name="etat">
+            <option value="fatigué">Fatigué(e)</option>
+            <option value="endormi">Endormi(e)</option>
+            <option value="détendu">Détendu(e)</option>
+            <option value="énergique">Énergique</option>
+        </select><br>
+
+        <label>3. Quel élément te représente le plus ?</label><br>
+        <select name="element">
+            <option value="feu">Feu</option>
+            <option value="eau">Eau</option>
+            <option value="vent">Vent</option>
+            <option value="terre">Terre</option>
+            <option value="lumière">Lumière</option>
+            <option value="obscurité">Obscurité</option>
+        </select><br>
+
+        <label>4. Tu préfères les interactions sociales virtuelles ou réelles ?</label><br>
+        <select name="interaction">
+            <option value="virtuel">Virtuel</option>
+            <option value="réalité">Réalité</option>
+        </select><br>
+
+        <button type="submit">Générer l'avatar</button>
     </form>
-    <br>
-    <img src="/static/mon_avatar.png" alt="avatar">
+
+    {% if avatar_generated %}
+        <img src="/avatar" alt="Avatar généré">
+    {% endif %}
+</div>
 </body>
 </html>
